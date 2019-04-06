@@ -39,8 +39,13 @@ public class DisciplinaMB extends BaseMB {
 	}
 	
 	public void onSave() {
-		edit.setProfessores(professores.getTarget());
-		disciplinaSB.save(edit);
-		showInsertMessage();
+		if(professores.getTarget().size() > 2){
+			showErrorMessage("É permitido apenas dois professores por disciplina.")
+		}
+		else{
+			edit.setProfessores(professores.getTarget());
+			disciplinaSB.save(edit);
+			showInsertMessage();
+		}
 	}
 }
