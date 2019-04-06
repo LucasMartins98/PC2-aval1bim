@@ -40,7 +40,7 @@ public class DisciplinaMB extends BaseMB {
 	
 	public void onSave() {
 		if(professores.getTarget().size() > 2){
-			showErrorMessage("É permitido apenas dois professores por disciplina.")
+			showErrorMessage("É permitido apenas dois professores por disciplina. ")
 		}
 		else{
 			edit.setProfessores(professores.getTarget());
